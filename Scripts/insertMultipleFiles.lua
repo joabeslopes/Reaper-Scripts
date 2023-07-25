@@ -33,7 +33,6 @@
 --     guitar_solo_2 (track)
 --     ```
 --     * Licence: GPL v3
---     * REAPER version: 6.8
 --     * Extensions required: None
 
 

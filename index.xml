@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Joabe Lopes Multitrack Project Creation">
+<index version="1" name="Joabe Lopes Multitrack_Project_Creation">
   <category name="Various">
     <reapack name="createMultipleTracks.lua" type="script">
       <metadata>
         <description>
-        Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.
-
-        Read the script comments for further information.
+        Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.  Read the script comments for further information.
         </description>
       </metadata>
       <version name="1.0.0beta" author="Joabe Lopes">
@@ -16,9 +14,7 @@
     <reapack name="insertMultipleFiles.lua" type="script">
       <metadata>
         <description>
-        Add multiple instruments from multiple musics on multiple tracks at once.
-
-        Read the script comments for further information.
+        Add multiple instruments from multiple musics on multiple tracks at once.  Read the script comments for further information.
         </description>
       </metadata>
       <version name="1.0.0beta" author="Joabe Lopes">
@@ -28,9 +24,7 @@
     <reapack name="newMultipleFiles.lua" type="script">
       <metadata>
         <description>
-        Same functionalites from insertMultipleFiles.lua, but with a selected list of folders (musics.txt), instead of all folders.
-        
-        Read the script comments for further information.
+        Same functionalites from insertMultipleFiles.lua, but with a selected list of folders (musics.txt), instead of all folders.  Read the script comments for further information.
         </description>
       </metadata>
       <version name="1.0.0beta" author="Joabe Lopes">

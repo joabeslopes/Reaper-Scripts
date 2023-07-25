@@ -1,36 +1,34 @@
--- ReaScript Name: createMultipleTracks
--- @author Joabe Lopes
--- @version 1.0
--- @links
---     Github repository https://github.com/joabeslopes/Reaper-scripts-multitrack-creation
--- @provides . https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/main/Scripts/createMultipleTracks.lua
--- @about
---   # DESCRIPTION
---
---   Script to create and color multiple tracks at once, based on the text file "tracks.txt", created by the user.
---
---   The structure is simple: UPPERCASE names will be the track folders,
---   and the lowercases will be the elements of the folder.
---
---   The file name must to be "tracks.txt", and the content should be like this (only the words):
---   ```
---   FOLDER_NAME
---   element_name
---   element_name
---
---   ANOTHER_FOLDER_NAME
---     another_element_name
---       another_element_name
---   ```
--- 
---   All the spaces will be "removed" internally on the script, so identation doesn't matter.
---
---   Put the text file in your project folder, or in the Reaper default project folder. Ex:
---   > C:\User\Documents\REAPER Media\
--- 
---   * Licence: GPL v3
---   * Extensions required: None
+--[[
+# DESCRIPTION
 
+Script to create and color multiple tracks at once, based on the text file "tracks.txt", created by the user.
+
+The structure is simple: UPPERCASE names will be the track folders,
+and the lowercases will be the elements of the folder.
+
+The file name must to be "tracks.txt", and the content should be like this:
+
+FOLDER_NAME
+element_name
+element_name
+
+ANOTHER_FOLDER_NAME
+  another_element_name
+    another_element_name
+
+
+All the spaces will be "removed" internally on the script, so identation doesn't matter.
+
+Put the text file in your project folder, or in the Reaper default project folder (to work on new unsaved projects). 
+Example:
+C:\User\Documents\REAPER Media\
+
+
+* Author: Joabe Lopes
+* Github repo: https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/
+* Licence: GPL v3
+* Extensions required: None
+]]
 
 
 -- split a big string into an array of strings, separated by the line breaks

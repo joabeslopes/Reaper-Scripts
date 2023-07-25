@@ -1,40 +1,36 @@
--- ReaScript Name: insertMultipleFiles
--- @author Joabe Lopes
--- @version 1.0
--- @links
---     Github repository https://github.com/joabeslopes/Reaper-scripts-multitrack-creation
--- @provides . https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/main/Scripts/insertMultipleFiles.lua
--- @about
---     # DESCRIPTION
---
---     Add multiple instruments from multiple musics on multiple tracks at once.
---
---     It will read all the folders inside the project folder, all the files inside then, and add the correct audio files into the correct tracks, based on the name of the file, the name of the track folder, and the search table.
--- 
---     The audio file name will be compared with the elements of the "searchTable", using regex pattern, so if something match, the audio will be added.
---
---     The searchTable is a matrix of arrays. 
---     Each array has the following elements: {"pattern of the name", trackFolderNumber , haveProjectMarker}.
---
---     * The first element (string) is required; 
---     * The second element (number) is only needed if you don't have a track folder (with UPPERCASE name) that matches the pattern searched;
---     * The third element (true or false) is only recommended for the audios on the first track of the project, because it will add a marker with the name of the folder that the audio belong, helping to organize the project (example: the metronome track, suposing that you have one metronome audio file for each music).
---
---
---     For example, you want to add all the guitar files (from all folders inside the project folder) on the project:
---     * add inside the searchTable: ..., {"guitar"}, ...
---     * add on the project:
---
---     ```
---     GUITARS (track folder)
---     guitar_base_1 (track)
---     guitar_base_2 (track)
---     guitar_solo_1 (track)
---     guitar_solo_2 (track)
---     ```
---     * Licence: GPL v3
---     * Extensions required: None
+--[[
+# DESCRIPTION
 
+Add multiple instruments from multiple musics on multiple tracks at once.
+
+It will read all the folders inside the project folder, all the files inside then, and add the correct audio files into the correct tracks, based on the name of the file, the name of the track folder, and the search table.
+ 
+The audio file name will be compared with the elements of the "searchTable", using regex pattern, so if something match, the audio will be added.
+
+The searchTable is a matrix of arrays. 
+Each array has the following elements: {"pattern of the name", trackFolderNumber , haveProjectMarker}.
+
+* The first element (string) is required; 
+* The second element (number) is only needed if you don't have a track folder (with UPPERCASE name) that matches the pattern searched;
+* The third element (true or false) is only recommended for the audios on the first track of the project, because it will add a marker with the name of the folder that the audio belong, helping to organize the project (example: the metronome track, suposing that you have one metronome audio file for each music).
+
+
+For example, you want to add all the guitar files (from all folders inside the project folder) on the project:
+* add inside the searchTable: ..., {"guitar"}, ...
+* add on the project:
+
+GUITARS (track folder)
+guitar_base_1 (track)
+guitar_base_2 (track)
+guitar_solo_1 (track)
+guitar_solo_2 (track)
+
+
+* Author: Joabe Lopes
+* Github repo: https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/
+* Licence: GPL v3
+* Extensions required: None
+]]
 
 
 -- adjust this table according to your needs

@@ -1,25 +1,20 @@
--- ReaScript Name: newMultipleFiles
--- @author Joabe Lopes
--- @version 1.0
--- @links
---     Github repository https://github.com/joabeslopes/Reaper-scripts-multitrack-creation
--- @provides . https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/main/Scripts/newMultipleFiles.lua
--- @about
---     # DESCRIPTION
---
---     Same functionalites of the [insertMultipleFiles]https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/blob/main/Scripts/insertMultipleFiles.lua script, but this time you just want to add some musics to the project, instead of all the musics.
---     How do you do that? You create a file named "musics.txt", and put inside it the names of the folders that you want to pull the instruments, separating by line breaks.
---     You don't need to write the exact folder name, just the enough to the computer find it.
---
---     ##Example of content:
---     ```
---     Folder 1
---     second_folder
---     THIRD FOLDER
---     ```
---     * Licence: GPL v3
---     * Extensions required: None
+--[[
+# DESCRIPTION
 
+Same functionalites of the https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/blob/main/Scripts/insertMultipleFiles.lua script, but this time you just want to add some musics to the project, instead of all the musics.
+How do you do that? You create a file named "musics.txt", and put inside it the names of the folders that you want to pull the instruments, separating by line breaks.
+You don't need to write the exact folder name, just the enough to the computer find it.
+
+## Example of content:
+Folder 1
+second_folder
+THIRD FOLDER
+
+* Author: Joabe Lopes
+* Github repo: https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/
+* Licence: GPL v3
+* Extensions required: None
+]]
 
 
 -- adjust this table according to your needs

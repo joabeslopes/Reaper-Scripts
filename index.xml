@@ -2,9 +2,12 @@
 <index version="1" name="Joabe Lopes Multitrack Project Creation">
   <category name="Various">
     <reapack name="createMultipleTracks.lua" type="script">
-      <version name="1.0.0beta" author="Joabe Lopes" desc="
-      Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.
-      ">
+    <metadata>
+      <description>
+        Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.
+      </description>
+    </metadata>
+      <version name="1.0.0beta" author="Joabe Lopes">
         <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
       </version>
     </reapack>

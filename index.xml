@@ -16,8 +16,9 @@
         Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.  Read the script comments for further information.
         </description>
       </metadata>
-      <version name="1.0.0beta" author="Joabe Lopes">
-        <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
+      <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-24">
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
+        <changelog><![CDATA[Initial Release]]></changelog>
       </version>
     </reapack>
     <reapack name="insertMultipleFiles.lua" type="script">
@@ -26,8 +27,9 @@
         Add multiple instruments from multiple musics on multiple tracks at once.  Read the script comments for further information.
         </description>
       </metadata>
-      <version name="1.0.0beta" author="Joabe Lopes">
-        <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/insertMultipleFiles.lua</source>
+      <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-24">
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/insertMultipleFiles.lua</source>
+        <changelog><![CDATA[Initial Release]]></changelog>
       </version>
     </reapack>
     <reapack name="newMultipleFiles.lua" type="script">
@@ -36,8 +38,9 @@
         Same functionalites from insertMultipleFiles.lua, but with a selected list of folders (musics.txt), instead of all folders.  Read the script comments for further information.
         </description>
       </metadata>
-      <version name="1.0.0beta" author="Joabe Lopes">
-        <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/newMultipleFiles.lua</source>
+      <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-24">
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/newMultipleFiles.lua</source>
+        <changelog><![CDATA[Initial Release]]></changelog>
       </version>
     </reapack>
   </category>

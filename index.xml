@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Joabe Lopes Multitrack Project Creation">
+  <category name="Various">
+    <reapack name="createMultipleTracks.lua" type="script">
+      <version name="1.0.0beta">
+        <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="insertMultipleFiles.lua" type="script">
+      <version name="1.0.0beta">
+        <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/insertMultipleFiles.lua</source>
+      </version>
+    </reapack>
+    <reapack name="newMultipleFiles.lua" type="script">
+      <version name="1.0.0beta">
+        <source>https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/newMultipleFiles.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>

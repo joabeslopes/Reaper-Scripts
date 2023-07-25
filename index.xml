@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <index version="1" name="Joabe Lopes Multitrack_Project_Creation">
+<metadata>
+  <description>
+    I'm a brazilian, computer science student, musician, and relatively bad gamer, not in that order. In short, that's it.
+    Thank you for reading a little bit about me :D
+  </description>
+    <link rel="github">https://github.com/joabeslopes/</link>
+    <link rel="website">https://serverjoabe.xyz</link>
+</metadata>
   <category name="Various">
     <reapack name="createMultipleTracks.lua" type="script">
       <metadata>

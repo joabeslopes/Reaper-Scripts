@@ -5,6 +5,7 @@
       <metadata>
         <description>
         Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.
+
         Read the script comments for further information.
         </description>
       </metadata>
@@ -16,6 +17,7 @@
       <metadata>
         <description>
         Add multiple instruments from multiple musics on multiple tracks at once.
+
         Read the script comments for further information.
         </description>
       </metadata>
@@ -27,6 +29,7 @@
       <metadata>
         <description>
         Same functionalites from insertMultipleFiles.lua, but with a selected list of folders (musics.txt), instead of all folders.
+        
         Read the script comments for further information.
         </description>
       </metadata>

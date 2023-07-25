@@ -3,7 +3,7 @@
 -- @version 1.0
 -- @links
 --     Github repository https://github.com/joabeslopes/Reaper-scripts-multitrack-creation
--- @provides . https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/blob/main/Scripts/insertMultipleFiles.lua
+-- @provides . https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/main/Scripts/insertMultipleFiles.lua
 -- @about
 --     # DESCRIPTION
 --

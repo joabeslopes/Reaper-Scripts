@@ -16,7 +16,7 @@
         Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.  Read the script comments for further information.
         </description>
       </metadata>
-      <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
+      <version name="1.0.0" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
         <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
         <changelog><![CDATA[Initial Release]]></changelog>
       </version>
@@ -27,7 +27,7 @@
         Add multiple instruments from multiple musics on multiple tracks at once.  Read the script comments for further information.
         </description>
       </metadata>
-      <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
+      <version name="1.0.0" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
         <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/insertMultipleFiles.lua</source>
         <changelog><![CDATA[Initial Release]]></changelog>
       </version>
@@ -38,7 +38,7 @@
         Same functionalites from insertMultipleFiles.lua, but with a selected list of folders (musics.txt), instead of all folders.  Read the script comments for further information.
         </description>
       </metadata>
-      <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
+      <version name="1.0.0" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
         <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/newMultipleFiles.lua</source>
         <changelog><![CDATA[Initial Release]]></changelog>
       </version>

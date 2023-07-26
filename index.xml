@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Joabe Lopes Multitrack_Project_Creation">
+<index version="1" name="Joabe Lopes Multitrack_Show_Creation">
 <metadata>
   <description>
     I'm a brazilian, computer science student, musician, and relatively bad gamer, not in that order. 
@@ -17,7 +17,7 @@
         </description>
       </metadata>
       <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
-        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/createMultipleTracks.lua</source>
         <changelog><![CDATA[Initial Release]]></changelog>
       </version>
     </reapack>
@@ -28,7 +28,7 @@
         </description>
       </metadata>
       <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
-        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/insertMultipleFiles.lua</source>
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/insertMultipleFiles.lua</source>
         <changelog><![CDATA[Initial Release]]></changelog>
       </version>
     </reapack>
@@ -39,7 +39,7 @@
         </description>
       </metadata>
       <version name="1.0.0beta" author="Joabe Lopes" time="2023-07-25T11:15:47Z">
-        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-creation/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/newMultipleFiles.lua</source>
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/4a09c1153774db64e39525a6277c30691b0b7b6d/Scripts/newMultipleFiles.lua</source>
         <changelog><![CDATA[Initial Release]]></changelog>
       </version>
     </reapack>

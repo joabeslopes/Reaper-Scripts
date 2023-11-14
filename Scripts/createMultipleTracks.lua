@@ -31,6 +31,9 @@ C:\User\Documents\REAPER Media\
 ]]
 
 
+
+OSName = reaper.GetOS()
+
 -- split a big string into an array of strings, separated by the line breaks
 function splitString(bigString)
   local stringArray = {}
@@ -43,7 +46,7 @@ end
 -- get the tracks.txt file inside the project folder
 function getTracksFileProject()
   local path = reaper.GetProjectPath()
-  if string.find(path, "^/.*") then -- probably Unix OS (Linux or MacOS)
+  if (OSName == "Other") then -- Linux distro
 
     folder = io.popen('ls "'..path..'"', 'r'):read('*all')
     folderItems = splitString(folder)
@@ -54,7 +57,7 @@ function getTracksFileProject()
       end
     end
 
-  elseif string.find(path, "^%u:.*") then -- probably Windows OS
+  elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
     folder = io.popen('dir /b "'..path..'"', 'r'):read('*all')
     folderItems = splitString(folder)
@@ -71,7 +74,7 @@ end
 -- get the tracks.txt file inside the folder of this script
 function getTracksFileScript()
   local path = debug.getinfo(2, "S").source:sub(2):match(".*[/\\]")
-  if string.find(path, "^/.*") then -- probably Unix OS (Linux or MacOS)
+  if (OSName == "Other") then -- Linux distro
 
     folder = io.popen('ls "'..path..'"', 'r'):read('*all')
     folderItems = splitString(folder)
@@ -82,7 +85,7 @@ function getTracksFileScript()
       end
     end
 
-  elseif string.find(path, "^%u:.*") then -- probably Windows OS
+  elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
     folder = io.popen('dir /b "'..path..'"', 'r'):read('*all')
     folderItems = splitString(folder)

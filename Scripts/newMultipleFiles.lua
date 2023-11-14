@@ -21,6 +21,9 @@ THIRD FOLDER
 searchTable = { {"cli",0,true},{"regencia",2},{"guia"},{"bass"},{"baixo"},{"guita"},{"vio"},{"perc"},{"sanf"},{"acordeon"},{"key"},{"tecla"},{"piano"},{"org"},{"fx"},{"sax"},{"trompete"} }
 
 
+
+OSName = reaper.GetOS()
+
 -- split a big string into an array of strings, separated by the line breaks ( \n )
 function splitString(bigString)
     stringArray = {}
@@ -28,15 +31,6 @@ function splitString(bigString)
         table.insert(stringArray, str)
     end
     return stringArray
-end
-
--- discover the kind of running OS, based on the project path
-function findOS(projectPath)
-    if string.find(projectPath, "^/.*") then -- probably Unix OS (Linux or MacOS)
-        return "unix"
-    elseif string.find(projectPath, "^%u:.*") then -- probably Windows OS
-        return "windows"
-    end
 end
 
 -- search for the file and it's corresponding track
@@ -196,7 +190,7 @@ end
 function getNewMusicsFileProject()
 
     local path = reaper.GetProjectPath()
-    if string.find(path, "^/.*") then -- probably Unix OS (Linux or MacOS)
+    if (OSName == "Other") then -- Linux distro
   
       folder = io.popen('ls "'..path..'"', 'r'):read('*all')
       folderItems = splitString(folder)
@@ -207,7 +201,7 @@ function getNewMusicsFileProject()
         end
       end
 
-    elseif string.find(path, "^%u:.*") then -- probably Windows OS
+    elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
   
       folder = io.popen('dir /b "'..path..'"', 'r'):read('*all')
       folderItems = splitString(folder)
@@ -246,9 +240,8 @@ if newMusics then
     -- discover the running OS and insert the medias in the project
 
     projectPath = reaper.GetProjectPath()
-    os = findOS(projectPath)
 
-    if os == "unix" then
+    if (OSName == "Other") then -- Linux distro
 
         projectFolders = io.popen('ls "'..projectPath..'"', 'r')
         readFolders = projectFolders:read('*all')
@@ -295,7 +288,7 @@ if newMusics then
             reaper.ShowConsoleMsg("Folder read error")
         end
 
-    elseif os == "windows" then
+    elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
         projectFolders = io.popen('dir /b "'..projectPath..'"', 'r')
         readFolders = projectFolders:read('*all')

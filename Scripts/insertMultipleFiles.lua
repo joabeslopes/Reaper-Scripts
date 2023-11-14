@@ -40,6 +40,26 @@ searchTable = { {"cli",0,true},{"regencia",2},{"guia"},{"bass"},{"baixo"},{"guit
 
 OSName = reaper.GetOS()
 
+
+-- read all folder content and register it in an array
+function readFolderContent(folderPath)
+
+    folderContent = ""
+
+    if OSName == "Other" then -- Linux distro
+        openedFolder = io.popen('ls "'..folderPath..'"', 'r')
+        folderContent = openedFolder:read("a")
+        openedFolder:close()
+    elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
+        openedFolder = io.popen('dir /b "'..folderPath..'"', 'r')
+        folderContent = openedFolder:read("a")
+        openedFolder:close()
+    end
+
+    return folderContent
+
+end
+
 -- split a big string into an array of strings, separated by the line breaks ( \n )
 function splitString(bigString)
     stringArray = {}
@@ -210,24 +230,19 @@ end
 fillSearchTable(searchTable)
 
 
--- discover the running OS and insert the medias in the project
+-- insert the media files in the project
 projectPath = reaper.GetProjectPath()
 
-if OSName == "Other" then -- Linux distro
-
-    projectFolders = io.popen('ls "'..projectPath..'"', 'r')
-    readFolders = projectFolders:read('*all')
+    readFolders = readFolderContent(projectPath)
     if readFolders then
         foldersNames = splitString(readFolders)
-        projectFolders:close()
 
         for folder = 1, #foldersNames do
             if (not string.find(foldersNames[folder], ".*%prpp.*")) and (not string.find(foldersNames[folder], "%ptxt$")) then -- ignore the project file and text files
 
                 musicPath = projectPath.. '/' ..foldersNames[folder].. '/'
-                allFiles = io.popen('ls "' .. musicPath .. '"', 'r'):read('*all')
+                allFiles = readFolderContent(musicPath)
                 filesNames = splitString(allFiles)
-                io.popen('ls "' ..musicPath.. '"', 'r'):close()
 
                 for file = 1, #filesNames do
                     if string.find(filesNames[file], ".*%pwav$") or string.find(filesNames[file], ".*%pmp3$") then --select only audio files (.wav or .mp3)
@@ -255,47 +270,3 @@ if OSName == "Other" then -- Linux distro
     else
         reaper.ShowConsoleMsg("Folder read error")
     end
-
-elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
-
-    projectFolders = io.popen('dir /b "'..projectPath..'"', 'r')
-    readFolders = projectFolders:read('*all')
-    if readFolders then
-        foldersNames = splitString(readFolders)
-        projectFolders:close()
-
-        for folder = 1, #foldersNames do
-            if (not string.find(foldersNames[folder], ".*%prpp.*")) and (not string.find(foldersNames[folder], "%ptxt$")) then -- ignore the project file and text files
-
-                musicPath = projectPath.. '\\' ..foldersNames[folder].. '\\'
-                allFiles = io.popen('dir /b "' .. musicPath .. '"', 'r'):read('*all')
-                filesNames = splitString(allFiles)
-                io.popen('dir /b "' ..musicPath.. '"', 'r'):close()
-
-                for file = 1, #filesNames do
-                    if string.find(filesNames[file], ".*%pwav$") or string.find(filesNames[file], ".*%pmp3$") then --select only audio files (.wav or .mp3)
-
-                        for s=1, #searchTable do
-                            regex = ".*"..searchTable[s][1]..".*"
-                            trackFolder = searchTable[s][2]
-                            haveProjMarker = searchTable[s][3]
-                            if string.find(filesNames[file]:upper(), regex:upper()) then
-                                audioPath, trackNumber = regexFullSearch(musicPath, filesNames[file]:upper(), regex:upper(), trackFolder)
-
-                                if haveProjMarker then
-                                    insertAudioTake(audioPath, trackNumber, foldersNames[folder])
-                                else
-                                    insertAudioTake(audioPath, trackNumber)
-                                end
-
-                            end
-                        end
-
-                    end
-                end
-            end
-        end
-    else
-        reaper.ShowConsoleMsg("Folder read error")
-    end
-end

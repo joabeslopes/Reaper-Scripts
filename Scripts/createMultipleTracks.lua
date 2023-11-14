@@ -48,8 +48,9 @@ function getTracksFileProject()
   local path = reaper.GetProjectPath()
   if (OSName == "Other") then -- Linux distro
 
-    folder = io.popen('ls "'..path..'"', 'r'):read('*all')
-    folderItems = splitString(folder)
+    folder = io.popen('ls "'..path..'"', 'r')
+    folderItems = splitString(folder:read("a"))
+    folder:close()
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."/tracks.txt"
@@ -59,8 +60,9 @@ function getTracksFileProject()
 
   elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
-    folder = io.popen('dir /b "'..path..'"', 'r'):read('*all')
-    folderItems = splitString(folder)
+    folder = io.popen('dir /b "'..path..'"', 'r')
+    folderItems = splitString(folder:read("a"))
+    folder:close()
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."\\tracks.txt"
@@ -76,8 +78,9 @@ function getTracksFileScript()
   local path = debug.getinfo(2, "S").source:sub(2):match(".*[/\\]")
   if (OSName == "Other") then -- Linux distro
 
-    folder = io.popen('ls "'..path..'"', 'r'):read('*all')
-    folderItems = splitString(folder)
+    folder = io.popen('ls "'..path..'"', 'r')
+    folderItems = splitString(folder:read("a"))
+    folder:close()
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."tracks.txt"
@@ -87,8 +90,9 @@ function getTracksFileScript()
 
   elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
-    folder = io.popen('dir /b "'..path..'"', 'r'):read('*all')
-    folderItems = splitString(folder)
+    folder = io.popen('dir /b "'..path..'"', 'r')
+    folderItems = splitString(folder:read("a"))
+    folder:close()
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."tracks.txt"
@@ -103,9 +107,9 @@ end
 function openTextFile(filePath)
   local fileContent = {}
 
-    file = io.open(filePath, 'r'):read('*all')
-    fileContent = splitString(file)
-    io.open(filePath, 'r'):close()
+    file = io.open(filePath, 'r')
+    fileContent = splitString(file:read("a"))
+    file:close()
     return fileContent
 
 end

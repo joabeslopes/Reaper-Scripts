@@ -55,7 +55,7 @@ end
 -- get the tracks.txt file inside the project folder
 function getTracksFileProject()
   local path = reaper.GetProjectPath()
-  if (OSName == "Other") then -- Linux distro
+  if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOS
 
     folder = io.popen('ls "'..path..'"', 'r')
     folderItems = splitString(folder:read("a"))
@@ -85,7 +85,7 @@ end
 -- get the tracks.txt file inside the folder of this script
 function getTracksFileScript()
   local path = debug.getinfo(2, "S").source:sub(2):match(".*[/\\]")
-  if (OSName == "Other") then -- Linux distro
+  if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOSs
 
     folder = io.popen('ls "'..path..'"', 'r')
     folderItems = splitString(folder:read("a"))

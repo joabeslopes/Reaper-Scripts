@@ -38,7 +38,7 @@ function readFolderContent(folderPath)
 
     folderContent = ""
 
-    if OSName == "Other" then -- Linux distro
+    if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOS
         openedFolder = io.popen('ls "'..folderPath..'"', 'r')
         folderContent = openedFolder:read('*all')
         openedFolder:close()
@@ -218,7 +218,7 @@ end
 function getNewMusicsFileProject()
 
     local path = reaper.GetProjectPath()
-    if (OSName == "Other") then -- Linux distro
+    if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOS
   
       folder = io.popen('ls "'..path..'"', 'r')
       folderItems = splitString(folder:read("a"))

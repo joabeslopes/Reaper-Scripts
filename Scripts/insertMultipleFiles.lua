@@ -56,7 +56,7 @@ function readFolderContent(folderPath)
 
     folderContent = ""
 
-    if OSName == "Other" then -- Linux distro
+    if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOS
         openedFolder = io.popen('ls "'..folderPath..'"', 'r')
         folderContent = openedFolder:read("a")
         openedFolder:close()

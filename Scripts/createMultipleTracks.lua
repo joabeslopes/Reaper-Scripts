@@ -29,7 +29,16 @@ C:\User\Documents\REAPER Media\
 * Licence: GPL v3
 * Extensions required: None
 ]]
+--[[
+  * Changelog:
 
+  * v1.1 (2023-11-15)
+    Improve logic and clean code
+  
+  * v1.0 (2023-07-25)
+    Initial release
+
+]]
 
 
 OSName = reaper.GetOS()

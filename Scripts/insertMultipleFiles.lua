@@ -31,6 +31,17 @@ guitar_solo_2 (track)
 * Licence: GPL v3
 * Extensions required: None
 ]]
+--[[
+  * Changelog:
+
+  * v1.1 (2023-11-15)
+    Improve logic and clean code
+  
+  * v1.0 (2023-07-25)
+    Initial release
+
+]]
+
 
 
 -- adjust this table according to your needs
@@ -39,7 +50,6 @@ searchTable = { {"cli",0,true},{"regencia",2},{"guia"},{"bass"},{"baixo"},{"guit
 
 
 OSName = reaper.GetOS()
-
 
 -- read all folder content and register it in an array
 function readFolderContent(folderPath)

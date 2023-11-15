@@ -17,6 +17,8 @@ THIRD FOLDER
 ]]
 --[[
   * Changelog:
+  * v1.2 (2023-11-15)
+    Add MacOS support
 
   * v1.1 (2023-11-15)
     Improve logic and clean code

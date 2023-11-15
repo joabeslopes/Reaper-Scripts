@@ -16,6 +16,9 @@
         Script to create and color multiple tracks at once, based on the text file 'tracks.txt', created by the user.  Read the script comments for further information.
         </description>
       </metadata>
+      <version name="1.2" author="Joabe Lopes" time="2023-11-15T20:00:00Z">
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/5a908962b4cc4e9da26763b8b9e2a4c56504612c/Scripts/createMultipleTracks.lua</source>
+        <changelog><![CDATA[Add MacOS support]]></changelog>
       <version name="1.1" author="Joabe Lopes" time="2023-11-15T18:00:00Z">
         <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/0bdb8205abfedf9347437d37824bfb64f2480e0e/Scripts/createMultipleTracks.lua</source>
         <changelog><![CDATA[Improve logic and clean code]]></changelog>
@@ -31,6 +34,9 @@
         Add multiple instruments from multiple musics on multiple tracks at once.  Read the script comments for further information.
         </description>
       </metadata>
+      <version name="1.2" author="Joabe Lopes" time="2023-11-15T20:00:00Z">
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/5a908962b4cc4e9da26763b8b9e2a4c56504612c/Scripts/insertMultipleFiles.lua</source>
+        <changelog><![CDATA[Add MacOS support]]></changelog>
       <version name="1.1" author="Joabe Lopes" time="2023-11-15T18:00:00Z">
         <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/0bdb8205abfedf9347437d37824bfb64f2480e0e/Scripts/insertMultipleFiles.lua</source>
         <changelog><![CDATA[Improve logic and clean code]]></changelog>
@@ -46,6 +52,9 @@
         Same functionalites from insertMultipleFiles.lua, but with a selected list of folders (musics.txt), instead of all folders.  Read the script comments for further information.
         </description>
       </metadata>
+      <version name="1.2" author="Joabe Lopes" time="2023-11-15T20:00:00Z">
+        <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/5a908962b4cc4e9da26763b8b9e2a4c56504612c/Scripts/newMultipleFiles.lua</source>
+        <changelog><![CDATA[Add MacOS support]]></changelog>
       <version name="1.1" author="Joabe Lopes" time="2023-11-15T18:00:00Z">
         <source main="main">https://github.com/joabeslopes/Reaper-scripts-multitrack-show/raw/0bdb8205abfedf9347437d37824bfb64f2480e0e/Scripts/newMultipleFiles.lua</source>
         <changelog><![CDATA[Improve logic and clean code]]></changelog>

@@ -4,20 +4,20 @@
 Script to create and color multiple tracks at once, based on the text file "tracks.txt", created by the user.
 
 The structure is simple: UPPERCASE names will be the track folders,
-and the lowercases will be the elements of the folder.
+and the lowercases will be the tracks of audio.
 
-The file name must to be "tracks.txt", and the content should be like this:
+**Line breaks will be ignored, but whitespaces don't.
 
-FOLDER_NAME
-element_name
-element_name
+The file name must to be "tracks.txt", and the content must be like this:
 
-ANOTHER_FOLDER_NAME
-  another_element_name
-    another_element_name
+TRACK FOLDER NAME
+track name
+track name
 
+ANOTHER TRACK FOLDER NAME
+another track name
+another track name
 
-All the spaces will be "removed" internally on the script, so identation doesn't matter.
 
 Put the text file in your project folder, or in the Reaper default project folder (to work on new unsaved projects). 
 Example:
@@ -30,7 +30,11 @@ C:\User\Documents\REAPER Media\
 * Extensions required: None
 ]]
 --[[
+
   * Changelog:
+  * v1.3 (2024-04-06)
+    Improved way of opening files and folders
+
   * v1.2 (2023-11-15)
     Add MacOS support
 
@@ -43,25 +47,17 @@ C:\User\Documents\REAPER Media\
 ]]
 
 
-OSName = reaper.GetOS()
-
--- split a big string into an array of strings, separated by the line breaks
-function splitString(bigString)
-  local stringArray = {}
-  for str in string.gmatch(bigString, "[^\n]+") do
-    table.insert(stringArray, str)
-  end
-  return stringArray
-end
-
 -- get the tracks.txt file inside the project folder
-function getTracksFileProject()
+function getTracksFileProject(OSName)
   local path = reaper.GetProjectPath()
+  local folder, folderItems, tracksTextfile
+
   if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOS
 
     folder = io.popen('ls "'..path..'"', 'r')
-    folderItems = splitString(folder:read("a"))
+    folderItems = splitContent(folder)
     folder:close()
+
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."/tracks.txt"
@@ -72,8 +68,9 @@ function getTracksFileProject()
   elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
     folder = io.popen('dir /b "'..path..'"', 'r')
-    folderItems = splitString(folder:read("a"))
+    folderItems = splitContent(folder)
     folder:close()
+
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."\\tracks.txt"
@@ -84,14 +81,16 @@ function getTracksFileProject()
 
 end
 
+
 -- get the tracks.txt file inside the folder of this script
-function getTracksFileScript()
+function getTracksFileScript(OSName)
   local path = debug.getinfo(2, "S").source:sub(2):match(".*[/\\]")
   if (OSName == "Other" or OSName == "OSX64") then -- Linux or MacOSs
 
     folder = io.popen('ls "'..path..'"', 'r')
-    folderItems = splitString(folder:read("a"))
+    folderItems = splitContent(folder)
     folder:close()
+
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."tracks.txt"
@@ -102,8 +101,9 @@ function getTracksFileScript()
   elseif (OSName == "Win64" or OSName == "Win32") then -- Windows
 
     folder = io.popen('dir /b "'..path..'"', 'r')
-    folderItems = splitString(folder:read("a"))
+    folderItems = splitContent(folder)
     folder:close()
+
     for f=1, #folderItems do
       if string.find(folderItems[f], "tracks%ptxt") then
         tracksTextfile = path.."tracks.txt"
@@ -111,39 +111,48 @@ function getTracksFileScript()
       end
     end
   end
-  
+
 end
 
--- read the content of the text file
-function openTextFile(filePath)
-  local fileContent = {}
 
-    file = io.open(filePath, 'r')
-    fileContent = splitString(file:read("a"))
-    file:close()
-    return fileContent
+function splitContent(pointer)
+  local content = {}
 
+  local item = pointer:read("l")
+  while item ~= nil do
+    if item ~= "" then
+      table.insert(content, item)
+    end
+    item = pointer:read("l")
+  end
+
+  return content
 end
 
 
 ---------------------- Main function ----------------------
 
 allTracks = nil
+OSName = reaper.GetOS()
+filePath = nil
 
 -- open the file
-if getTracksFileProject() then
-  allTracks = openTextFile(getTracksFileProject())
-elseif getTracksFileScript() then
-  allTracks = openTextFile(getTracksFileScript())
+if getTracksFileProject(OSName) then
+  filePath = getTracksFileProject(OSName)
+
+elseif getTracksFileScript(OSName) then
+  filePath = getTracksFileScript(OSName)
 end
 
+
+if filePath then
+  tracksFile = io.open(filePath, 'r')
+  allTracks = splitContent(tracksFile)
+  tracksFile:close()
+end
+
+
 if allTracks then
-  -- delete all the spaces
-  for i = 1, #allTracks do
-  if string.find(allTracks[i],"^%s*") then
-    allTracks[i] = string.gsub(allTracks[i],"%s","")
-  end
-  end
 
   -- create all tracks and color them
   for i = 1, #allTracks do
